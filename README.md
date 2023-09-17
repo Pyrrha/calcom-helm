@@ -2,6 +2,8 @@
 
 [Cal.com](https://cal.com/fr) is a powerful tool to book meetings. Using integrations, a contact can be stored into a CRM as the event booked in your Calendar. The pretty nice interface helps your leads and customers to reach you out.
 
+![Cal.com interface](.attachments/calcom.png)
+
 ## Purpose
 
 This Chart stands for a proposal to deploy Cal.com on a Kuberbetes cluster, using Helm. It uses the [docker image](https://github.com/calcom/docker) from cal.com.
