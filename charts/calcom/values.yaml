@@ -24,18 +24,13 @@ service:
 ingress:
   enabled: true
   className: nginx
-  annotations: 
-    cert-manager.io/cluster-issuer: letsencrypt
-    kubernetes.io/tls-acme: "true"
+  annotations: {}
   hosts:
-    - host: meet.dietz.dev
+    - host: example.org
       paths:
         - path: /
           pathType: ImplementationSpecific
-  tls:
-    - secretName: meet-dietz-dev
-      hosts:
-      - meet.dietz.dev
+  tls: []
 
 resources: {}
 
