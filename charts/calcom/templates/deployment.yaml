@@ -269,6 +269,12 @@ spec:
                   key: TWILIO_VERIFY_SID
                   name: {{ .Values.secretRef }}
                   optional: true
+            - name: GOOGLE_API_CREDENTIALS
+              valueFrom:
+                secretKeyRef:
+                  key: GOOGLE_API_CREDENTIALS
+                  name: {{ .Values.secretRef }}
+                  optional: true
             - name: NEXT_PUBLIC_IS_E2E
               valueFrom:
                 secretKeyRef:
