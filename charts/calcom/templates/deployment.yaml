@@ -24,7 +24,6 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "calcom.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -33,9 +32,450 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: CALCOM_LICENSE_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: CALCOM_LICENSE_KEY
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  key: DATABASE_URL
+                  name: {{ .Values.secretRef }}
+            - name: UPSTASH_REDIS_REST_URL
+              valueFrom:
+                secretKeyRef:
+                  key: UPSTASH_REDIS_REST_URL
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: UPSTASH_REDIS_REST_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: UPSTASH_REDIS_REST_TOKEN
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: PRISMA_GENERATE_DATAPROXY
+              valueFrom:
+                secretKeyRef:
+                  key: PRISMA_GENERATE_DATAPROXY
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_WEBAPP_URL
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_WEBAPP_URL
+                  name: {{ .Values.secretRef }}
+            - name: NEXT_PUBLIC_WEBSITE_URL
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_WEBSITE_URL
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_CONSOLE_URL
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_CONSOLE_URL
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_EMBED_LIB_URL
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_EMBED_LIB_URL
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: SAML_DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  key: SAML_DATABASE_URL
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: SAML_ADMINS
+              valueFrom:
+                secretKeyRef:
+                  key: SAML_ADMINS
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_HOSTED_CAL_FEATURES
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_HOSTED_CAL_FEATURES
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: SAML_CLIENT_SECRET_VERIFIER
+              valueFrom:
+                secretKeyRef:
+                  key: SAML_CLIENT_SECRET_VERIFIER
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: PGSSLMODE
+              valueFrom:
+                secretKeyRef:
+                  key: PGSSLMODE
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: ALLOWED_HOSTNAMES
+              valueFrom:
+                secretKeyRef:
+                  key: ALLOWED_HOSTNAMES
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: RESERVED_SUBDOMAINS
+              valueFrom:
+                secretKeyRef:
+                  key: RESERVED_SUBDOMAINS
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXTAUTH_URL
+              valueFrom:
+                secretKeyRef:
+                  key: NEXTAUTH_URL
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXTAUTH_SECRET
+              valueFrom:
+                secretKeyRef:
+                  key: NEXTAUTH_SECRET
+                  name: {{ .Values.secretRef }}
+            - name: NEXTAUTH_COOKIE_DOMAIN
+              valueFrom:
+                secretKeyRef:
+                  key: NEXTAUTH_COOKIE_DOMAIN
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: CALCOM_TELEMETRY_DISABLED
+              valueFrom:
+                secretKeyRef:
+                  key: CALCOM_TELEMETRY_DISABLED
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: CRON_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: CRON_API_KEY
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: CRON_ENABLE_APP_SYNC
+              valueFrom:
+                secretKeyRef:
+                  key: CRON_ENABLE_APP_SYNC
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: CALENDSO_ENCRYPTION_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: CALENDSO_ENCRYPTION_KEY
+                  name: {{ .Values.secretRef }}
+            - name: NEXT_PUBLIC_INTERCOM_APP_ID
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_INTERCOM_APP_ID
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: INTERCOM_SECRET
+              valueFrom:
+                secretKeyRef:
+                  key: INTERCOM_SECRET
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_ZENDESK_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_ZENDESK_KEY
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_HELPSCOUT_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_HELPSCOUT_KEY
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_FRESHCHAT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_FRESHCHAT_TOKEN
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_FRESHCHAT_HOST
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_FRESHCHAT_HOST
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: SEND_FEEDBACK_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  key: SEND_FEEDBACK_EMAIL
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: SENDGRID_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: SENDGRID_API_KEY
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: SENDGRID_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  key: SENDGRID_EMAIL
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_SENDGRID_SENDER_NAME
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_SENDGRID_SENDER_NAME
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: TWILIO_SID
+              valueFrom:
+                secretKeyRef:
+                  key: TWILIO_SID
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: TWILIO_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: TWILIO_TOKEN
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: TWILIO_MESSAGING_SID
+              valueFrom:
+                secretKeyRef:
+                  key: TWILIO_MESSAGING_SID
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: TWILIO_PHONE_NUMBER
+              valueFrom:
+                secretKeyRef:
+                  key: TWILIO_PHONE_NUMBER
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: TWILIO_WHATSAPP_PHONE_NUMBER
+              valueFrom:
+                secretKeyRef:
+                  key: TWILIO_WHATSAPP_PHONE_NUMBER
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_SENDER_ID
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_SENDER_ID
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: TWILIO_VERIFY_SID
+              valueFrom:
+                secretKeyRef:
+                  key: TWILIO_VERIFY_SID
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_IS_E2E
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_IS_E2E
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_STRIPE_PRO_PLAN_PRICE
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_STRIPE_PRO_PLAN_PRICE
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_STRIPE_PREMIUM_PLAN_PRICE
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_STRIPE_PREMIUM_PLAN_PRICE
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_IS_PREMIUM_NEW_PLAN
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_IS_PREMIUM_NEW_PLAN
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_STRIPE_PREMIUM_NEW_PLAN_PRICE
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_STRIPE_PREMIUM_NEW_PLAN_PRICE
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: STRIPE_TEAM_MONTHLY_PRICE_ID
+              valueFrom:
+                secretKeyRef:
+                  key: STRIPE_TEAM_MONTHLY_PRICE_ID
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: STRIPE_ORG_MONTHLY_PRICE_ID
+              valueFrom:
+                secretKeyRef:
+                  key: STRIPE_ORG_MONTHLY_PRICE_ID
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: STRIPE_WEBHOOK_SECRET
+              valueFrom:
+                secretKeyRef:
+                  key: STRIPE_WEBHOOK_SECRET
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: STRIPE_PRIVATE_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: STRIPE_PRIVATE_KEY
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: STRIPE_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  key: STRIPE_CLIENT_ID
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: PAYMENT_FEE_FIXED
+              valueFrom:
+                secretKeyRef:
+                  key: PAYMENT_FEE_FIXED
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: PAYMENT_FEE_PERCENTAGE
+              valueFrom:
+                secretKeyRef:
+                  key: PAYMENT_FEE_PERCENTAGE
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: API_KEY_PREFIX
+              valueFrom:
+                secretKeyRef:
+                  key: API_KEY_PREFIX
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: EMAIL_FROM
+              valueFrom:
+                secretKeyRef:
+                  key: EMAIL_FROM
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: EMAIL_SERVER_HOST
+              valueFrom:
+                secretKeyRef:
+                  key: EMAIL_SERVER_HOST
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: EMAIL_SERVER_PORT
+              valueFrom:
+                secretKeyRef:
+                  key: EMAIL_SERVER_PORT
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: E2E_TEST_MAILHOG_ENABLED
+              valueFrom:
+                secretKeyRef:
+                  key: E2E_TEST_MAILHOG_ENABLED
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_TEAM_IMPERSONATION
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_TEAM_IMPERSONATION
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: CLOSECOM_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: CLOSECOM_API_KEY
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: SENDGRID_SYNC_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: SENDGRID_SYNC_API_KEY
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_APP_NAME
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_APP_NAME
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_SUPPORT_MAIL_ADDRESS
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_SUPPORT_MAIL_ADDRESS
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_COMPANY_NAME
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_COMPANY_NAME
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_DISABLE_SIGNUP
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_DISABLE_SIGNUP
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: CSP_POLICY
+              valueFrom:
+                secretKeyRef:
+                  key: CSP_POLICY
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: EDGE_CONFIG
+              valueFrom:
+                secretKeyRef:
+                  key: EDGE_CONFIG
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: NEXT_PUBLIC_MINUTES_TO_BOOK
+              valueFrom:
+                secretKeyRef:
+                  key: NEXT_PUBLIC_MINUTES_TO_BOOK
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: ORGANIZATIONS_ENABLED
+              valueFrom:
+                secretKeyRef:
+                  key: ORGANIZATIONS_ENABLED
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: ORGANIZATIONS_AUTOLINK
+              valueFrom:
+                secretKeyRef:
+                  key: ORGANIZATIONS_AUTOLINK
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: PROJECT_ID_VERCEL
+              valueFrom:
+                secretKeyRef:
+                  key: PROJECT_ID_VERCEL
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: TEAM_ID_VERCEL
+              valueFrom:
+                secretKeyRef:
+                  key: TEAM_ID_VERCEL
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: AUTH_BEARER_TOKEN_VERCEL
+              valueFrom:
+                secretKeyRef:
+                  key: AUTH_BEARER_TOKEN_VERCEL
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: E2E_TEST_APPLE_CALENDAR_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  key: E2E_TEST_APPLE_CALENDAR_EMAIL
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: E2E_TEST_APPLE_CALENDAR_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: E2E_TEST_APPLE_CALENDAR_PASSWORD
+                  name: {{ .Values.secretRef }}
+                  optional: true
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 3000
               protocol: TCP
           livenessProbe:
             httpGet:
