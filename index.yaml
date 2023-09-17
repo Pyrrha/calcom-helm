@@ -1,0 +1,16 @@
+apiVersion: v1
+entries:
+  calcom:
+  - apiVersion: v2
+    appVersion: v3.3.1
+    created: "2023-09-17T11:20:06.436838484Z"
+    description: A Helm chart for Kubernetes
+    digest: 1a1ecdf7f5345b3135bada5315758a9c4a573c43cfbcaba7355e570358c51739
+    name: calcom
+    sources:
+    - https://github.com/Pyrrha/calcom-helm/tree/main
+    type: application
+    urls:
+    - https://github.com/Pyrrha/calcom-helm/releases/download/calcom-0.1.4/calcom-0.1.4.tgz
+    version: 0.1.4
+generated: "2023-09-17T11:20:06.436842784Z"
