@@ -33,4 +33,4 @@ Work in progress. You can open an Issue at this time.
 
 ### An application variable doesn't work on the Chart
 
-The development of the Chart can be delayed. Please check first if the variable is present in the [deployment file](https://github.com/Pyrrha/calcom-helm/blob/main/charts/calcom/templates/deployment.yaml). If not, you can open a PR or an issue to add it.
+The development of the Chart can be delayed. Please check first if the variable is present in the [deployment file](https://github.com/Pyrrha/calcom-helm/blob/main/charts/calcom/templates/deployment.yaml). If not, you can open a PR or an issue to add it. Otherwise, you can be selfish and just  override the deployment file as a template in your own configuration.
