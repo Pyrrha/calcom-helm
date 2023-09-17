@@ -275,6 +275,18 @@ spec:
                   key: GOOGLE_API_CREDENTIALS
                   name: {{ .Values.secretRef }}
                   optional: true
+            - name: HUBSPOT_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  key: HUBSPOT_CLIENT_ID
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: HUBSPOT_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  key: HUBSPOT_CLIENT_SECRET
+                  name: {{ .Values.secretRef }}
+                  optional: true
             - name: NEXT_PUBLIC_IS_E2E
               valueFrom:
                 secretKeyRef:
