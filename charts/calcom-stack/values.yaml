@@ -1,0 +1,20 @@
+postgresql:
+  auth:
+    username: user
+    password: password
+    database: calcom
+  primary:
+    persistence:
+      storageClass: local-storage
+
+calcom:
+  ingress:
+    enabled: true
+    className: ""
+    annotations: {}
+    hosts:
+      - host: example.org
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls: []
