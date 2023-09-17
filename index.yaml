@@ -3,6 +3,18 @@ entries:
   calcom:
   - apiVersion: v2
     appVersion: v3.3.1
+    created: "2023-09-17T18:50:37.384475615Z"
+    description: A Helm chart for Kubernetes
+    digest: 1ca6c83b290105c24dd98a6d8386e0bcc5827286fb5a9a7294ee35bc2bea8a07
+    name: calcom
+    sources:
+    - https://github.com/Pyrrha/calcom-helm/tree/main
+    type: application
+    urls:
+    - https://github.com/Pyrrha/calcom-helm/releases/download/calcom-0.1.5/calcom-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: v3.3.1
     created: "2023-09-17T11:20:06.436838484Z"
     description: A Helm chart for Kubernetes
     digest: 1a1ecdf7f5345b3135bada5315758a9c4a573c43cfbcaba7355e570358c51739
@@ -31,4 +43,4 @@ entries:
     urls:
     - https://github.com/Pyrrha/calcom-helm/releases/download/calcom-stack-0.1.0/calcom-stack-0.1.0.tgz
     version: 0.1.0
-generated: "2023-09-17T11:41:31.041356853Z"
+generated: "2023-09-17T18:50:37.384490315Z"
