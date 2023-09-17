@@ -13,4 +13,22 @@ entries:
     urls:
     - https://github.com/Pyrrha/calcom-helm/releases/download/calcom-0.1.4/calcom-0.1.4.tgz
     version: 0.1.4
-generated: "2023-09-17T11:20:06.436842784Z"
+  calcom-stack:
+  - apiVersion: v2
+    appVersion: v3.3.1
+    created: "2023-09-17T11:41:31.041348653Z"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.11.2
+    - name: calcom
+      repository: https://pyrrha.github.io/calcom-helm
+      version: 0.1.4
+    description: A Helm chart for Kubernetes
+    digest: ffcc3b1a97a555c931a24c67cd2bf1324ba754e59a7a574b350b7fdeddb8b0f6
+    name: calcom-stack
+    type: application
+    urls:
+    - https://github.com/Pyrrha/calcom-helm/releases/download/calcom-stack-0.1.0/calcom-stack-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-09-17T11:41:31.041356853Z"
