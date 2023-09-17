@@ -1,6 +1,6 @@
 # Calcom Helm
 
-Helm chart for [cal.com](https://github.com/calcom/cal.com).
+[Cal.com](https://cal.com/fr) is a powerful tool to book meetings. Using integrations, a contact can be stored into a CRM as the event booked in your Calendar. The pretty nice interface helps your leads and customers to reach you out.
 
 ## Purpose
 
@@ -38,7 +38,7 @@ helm upgrade --install --values values.yaml calcom-stack calcom-stack
 
 For this value file, you can also configure theingress information. You can also use the postgresql fields to configure user, password and database. This is not a secure option, the recommandation leads to use another secret for this, and [postgresql.auth.existingSecret](https://github.com/bitnami/charts/blob/main/bitnami/postgresql/values.yaml).
 
-👉 An [example of PV](https://github.com/Pyrrha/calcom-helm/blob/main/examples/pv.yaml) is provided to quickly makes you start quickly. Use it at your own risks.
+👉 An [example of PV](https://github.com/Pyrrha/calcom-helm/blob/main/examples/pv.yaml) is provided to quickly makes you start quickly. It will be used for the database to store all information about the application. Use it at your own risks.
 
 ## Variables
 
