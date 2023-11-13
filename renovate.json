@@ -3,7 +3,6 @@
   "labels": ["renovate"],
   "extends": [
     "config:base",
-    ":automergeMinor",
     ":enableVulnerabilityAlertsWithLabel('security')",
     ":rebaseStalePrs",
     ":separateMultipleMajorReleases",
