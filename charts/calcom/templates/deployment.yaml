@@ -383,6 +383,18 @@ spec:
                   key: EMAIL_SERVER_PORT
                   name: {{ .Values.secretRef }}
                   optional: true
+            - name: EMAIL_SERVER_USER
+              valueFrom:
+                secretKeyRef:
+                  key: EMAIL_SERVER_USER
+                  name: {{ .Values.secretRef }}
+                  optional: true
+            - name: EMAIL_SERVER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: EMAIL_SERVER_PASSWORD
+                  name: {{ .Values.secretRef }}
+                  optional: true
             - name: E2E_TEST_MAILHOG_ENABLED
               valueFrom:
                 secretKeyRef:
