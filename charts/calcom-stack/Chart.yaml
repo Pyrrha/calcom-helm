@@ -7,7 +7,7 @@ appVersion: v3.5.4
 dependencies:
   - name: postgresql
     repository: https://charts.bitnami.com/bitnami
-    version: 13.2.23
+    version: 13.2.24
   - name: calcom
     repository: https://pyrrha.github.io/calcom-helm
     version: 0.1.7
