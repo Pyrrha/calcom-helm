@@ -1,18 +1,8 @@
 apiVersion: v2
 name: calcom
-description: |
-  # Release calcom v0.2.0
-
-  ## Changelog
-
-  - Upgrade docker image from v3.5.5 to v3.6.1
-  - Add information in Chart file
-
-  ## Notes
-
-  - The Chart will be upgraded in futures versions in Helm v3.
+description: Deploy Calcom in a Helm Chart
 type: application
-version: 0.2.0
+version: 0.2.1
 appVersion: v3.6.1
 keywords:
   - kubernetes
