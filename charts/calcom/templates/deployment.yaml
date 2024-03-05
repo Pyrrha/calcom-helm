@@ -44,6 +44,11 @@ spec:
                 secretKeyRef:
                   key: DATABASE_URL
                   name: {{ .Values.secretRef }}
+            - name: DATABASE_DIRECT_URL
+              valueFrom:
+                secretKeyRef:
+                  key: DATABASE_URL
+                  name: {{ .Values.secretRef }}
             - name: UPSTASH_REDIS_REST_URL
               valueFrom:
                 secretKeyRef:
