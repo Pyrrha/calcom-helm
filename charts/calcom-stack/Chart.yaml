@@ -2,12 +2,12 @@ apiVersion: v2
 name: calcom-stack
 description: Deploy Calcom chart with a database
 type: application
-version: 0.3.6
-appVersion: v4.1.12
+version: 0.3.7
+appVersion: v4.2.1
 dependencies:
   - name: postgresql
     repository: https://charts.bitnami.com/bitnami
     version: 15.5.10
   - name: calcom
     repository: https://pyrrha.github.io/calcom-helm
-    version: 0.6.3
+    version: 0.6.4
