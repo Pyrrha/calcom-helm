@@ -10,4 +10,4 @@ dependencies:
     version: 15.5.13
   - name: calcom
     repository: https://pyrrha.github.io/calcom-helm
-    version: 0.6.4
+    version: 0.6.5
