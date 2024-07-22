@@ -7,5 +7,6 @@
     ":rebaseStalePrs",
     ":separateMultipleMajorReleases",
     ":skipStatusChecks"
-  ]
+  ],
+  "reviewers": ["Pyrrha"]
 }
