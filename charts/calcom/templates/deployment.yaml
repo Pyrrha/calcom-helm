@@ -229,7 +229,7 @@ spec:
             httpGet:
               path: /
               port: http
-          livenessProbe:
+          startupProbe:
             httpGet:
               path: /
               port: http
