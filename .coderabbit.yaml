@@ -1,0 +1,6 @@
+reviews:
+  poem: false
+  collapse_walkthrough: false
+  auto_review:
+    ignore_title_keywords:
+      - 'chore(deps): update '
