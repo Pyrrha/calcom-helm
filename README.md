@@ -52,7 +52,8 @@ Since many of these variables contain tokens or password information, they shoul
 
 ### Mandatory Runtime Variables
 
-> ⚠️ These variables must also be provided at runtime, or the Chart will not function correctly.
+> [!WARNING]
+> These variables must also be provided at runtime, or the Chart will not function correctly.
 > They must be present in the secret referenced as `secretRef` in Calcom's values.
 
 | Variable              | Description                                             |
