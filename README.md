@@ -63,9 +63,17 @@ Since many of these variables contain tokens or password information, they shoul
 | CALENDSO_ENCRYPTION_KEY| Application Key for symmetric encryption and decryption. It must be 32 bytes for AES256 encryption algorithm. |
 | DATABASE_URL          | The database URL including credentials.                |
 
-## Contributing
+## Contributions
 
-Work in progress. You can open an issue at this time.
+Thanks to all our contributors!
+
+For now, you can open an issue or open a pull request to interract with the project.
+
+<br>
+
+<a href = "https://github.com/Pyrrha/calcom-helm/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=Pyrrha/calcom-helm"/>
+</a>
 
 ## Troubleshooting
 
@@ -73,12 +81,3 @@ Work in progress. You can open an issue at this time.
 
 Development of the Chart may not always keep up with changes in the application. If you encounter an issue with a variable, first check if it's present in the [deployment file](https://github.com/Pyrrha/calcom-helm/blob/main/charts/calcom/templates/deployment.yaml). If it's missing, you can either open a pull request or an issue to have it added. Alternatively, you can customize the deployment file in your own configuration if necessary.
 
-## Contributions
-
-Thanks to all our contributors!
-
-<br>
-
-<a href = "https://github.com/Pyrrha/calcom-helm/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=Pyrrha/calcom-helm"/>
-</a>
