@@ -2,6 +2,34 @@ apiVersion: v1
 entries:
   calcom:
   - apiVersion: v2
+    appVersion: v4.6.7
+    created: "2024-10-21T08:28:58.007333322Z"
+    description: Deploy Calcom in a Helm Chart
+    digest: 7ffe0f62504a5d215cae8303019ea16e7e60e1f7a484a64629159bc5ba4304c0
+    home: https://pyrrha.github.io/calcom-helm/
+    keywords:
+    - kubernetes
+    - chart
+    - schedule
+    - conference
+    - calendar
+    - visio
+    - helm
+    - meeting
+    - cal
+    - appointment
+    - calcom
+    maintainers:
+    - name: Pyrrha
+      url: https://github.com/Pyrrha/calcom-helm
+    name: calcom
+    sources:
+    - https://github.com/Pyrrha/calcom-helm
+    type: application
+    urls:
+    - https://github.com/Pyrrha/calcom-helm/releases/download/calcom-0.7.9/calcom-0.7.9.tgz
+    version: 0.7.9
+  - apiVersion: v2
     appVersion: v4.6.6
     created: "2024-10-20T13:09:53.084854268Z"
     description: Deploy Calcom in a Helm Chart
@@ -1308,4 +1336,4 @@ entries:
     urls:
     - https://github.com/Pyrrha/calcom-helm/releases/download/calcom-stack-0.1.0/calcom-stack-0.1.0.tgz
     version: 0.1.0
-generated: "2024-10-20T13:11:33.521151952Z"
+generated: "2024-10-21T08:28:58.007594005Z"
