@@ -2,8 +2,8 @@ apiVersion: v2
 name: calcom
 description: Deploy Calcom in a Helm Chart
 type: application
-version: 0.7.10
-appVersion: v4.6.8
+version: 0.7.11
+appVersion: v4.6.9
 keywords:
   - kubernetes
   - chart
