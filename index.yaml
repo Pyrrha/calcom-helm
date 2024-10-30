@@ -905,6 +905,23 @@ entries:
     version: 0.1.4
   calcom-stack:
   - apiVersion: v2
+    appVersion: v4.6.14
+    created: "2024-10-30T19:41:03.121804158Z"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.1.0
+    - name: calcom
+      repository: https://pyrrha.github.io/calcom-helm
+      version: 0.8.0
+    description: Deploy Calcom chart with a database
+    digest: a17a245dd0e75e8f6d6e3137a79239a65a4aee2ff8e7f9d7dbc9532cd955d0e2
+    name: calcom-stack
+    type: application
+    urls:
+    - https://github.com/Pyrrha/calcom-helm/releases/download/calcom-stack-0.4.15/calcom-stack-0.4.15.tgz
+    version: 0.4.15
+  - apiVersion: v2
     appVersion: v4.6.12
     created: "2024-10-28T09:13:55.981223754Z"
     dependencies:
@@ -1533,4 +1550,4 @@ entries:
     urls:
     - https://github.com/Pyrrha/calcom-helm/releases/download/calcom-stack-0.1.0/calcom-stack-0.1.0.tgz
     version: 0.1.0
-generated: "2024-10-30T19:36:25.812613814Z"
+generated: "2024-10-30T19:41:03.122107273Z"
