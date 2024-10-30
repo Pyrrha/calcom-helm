@@ -55,6 +55,7 @@ spec:
               "EMAIL_SERVER_PASSWORD"
               "EMAIL_SERVER_PORT"
               "EMAIL_SERVER_USER"
+              "EMAIL_FROM"
               "LOCAL_TESTING_DOMAIN_VERCEL"
               "RESEND_API_KEY"
               "AB_TEST_BUCKET_PROBABILITY"
