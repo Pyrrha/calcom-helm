@@ -111,6 +111,8 @@ spec:
               "E2E_TEST_SAML_ADMIN_PASSWORD"
               "EDGE_CONFIG"
               "EMAIL_FROM"
+              "EMAIL_FROM_NAME"
+              "CAL_SIGNATURE_TOKEN"
               "FORMBRICKS_FEEDBACK_SURVEY_ID"
               "GIPHY_API_KEY"
               "GOOGLE_API_CREDENTIALS"
