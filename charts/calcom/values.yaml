@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: calcom/cal.com
   pullPolicy: IfNotPresent
-  tag: v5.0.19
+  tag: v5.3.4
 
 imagePullSecrets: []
 nameOverride: ""
